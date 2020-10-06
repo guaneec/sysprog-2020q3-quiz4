@@ -1,7 +1,9 @@
 *
-!*.cpp
-!*.c
+!*/
+!**/*.cpp
+!**/*.c
 !Makefile
 !.clang-format
 !.gitignore
 !kth_parent.txt
+!**/*.hpp
