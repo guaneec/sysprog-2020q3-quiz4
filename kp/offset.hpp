@@ -44,7 +44,7 @@ int treeAncestorGetKthAncestor(TreeAncestor *obj, int node, int k)
 {
     node = node + 1;
     int max_level = obj->max_level;
-    for (int i = 0; i < max_level && node != -1; ++i)
+    for (int i = 0; i < max_level && node; ++i)
         if (k & (1 << i))
             node = obj->parent[node][i];
     return node - 1;
