@@ -8,6 +8,7 @@
 #include "kp/flatten.hpp"
 #include "kp/full.hpp"
 #include "kp/hybrid.hpp"
+#include "kp/level.hpp"
 #include "kp/offset.hpp"
 #include "kp/short.hpp"
 #include "kpcases.hpp"
@@ -34,6 +35,7 @@ BENCH_KP(ctzl);
 BENCH_KP(flatten);
 BENCH_KP(hybrid);
 BENCH_KP(short);
+BENCH_KP(level);
 BENCH_KP(full);
 
 
