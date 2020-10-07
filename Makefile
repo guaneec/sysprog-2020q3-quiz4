@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -O2 -g -Wall -Werror -fsanitize=address
 
-KP_SRC = kp/base.hpp  kp/ctzl.hpp  kp/flatten.hpp  kp/full.hpp  kp/hybrid.hpp  kp/offset.hpp  kp/short.hpp
+KP_SRC = $(wildcard kp/*.hpp)
 
 benchfizz: benchfizz.cpp
 	g++ -O2 benchfizz.cpp -isystem /usr/local/include/benchmark -L/usr/local/lib/libbenchmark.a -lbenchmark -lpthread  -fno-omit-frame-pointer  -o benchfizz
