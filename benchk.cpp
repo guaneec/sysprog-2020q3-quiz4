@@ -10,6 +10,7 @@
 #include "kp/full.hpp"
 #include "kp/hybrid.hpp"
 #include "kp/level.hpp"
+#include "kp/memcpy.hpp"
 #include "kp/offset.hpp"
 #include "kp/short.hpp"
 #include "kpcases.hpp"
@@ -38,6 +39,7 @@ BENCH_KP(ftrans);
 BENCH_KP(hybrid);
 BENCH_KP(short);
 BENCH_KP(level);
+BENCH_KP(memcpy);
 BENCH_KP(full);
 
 
