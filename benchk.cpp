@@ -5,13 +5,17 @@
 #include <cstring>
 #include "kp/base.hpp"
 #include "kp/ctzl.hpp"
+#include "kp/fflip.hpp"
 #include "kp/flatten.hpp"
+#include "kp/fnoflip.hpp"
 #include "kp/ftrans.hpp"
 #include "kp/full.hpp"
 #include "kp/hybrid.hpp"
 #include "kp/level.hpp"
 #include "kp/memcpy.hpp"
 #include "kp/offset.hpp"
+#include "kp/rscan.hpp"
+#include "kp/rstore.hpp"
 #include "kp/short.hpp"
 #include "kpcases.hpp"
 
@@ -41,6 +45,10 @@ BENCH_KP(hybrid);
 BENCH_KP(short);
 BENCH_KP(level);
 BENCH_KP(memcpy);
+BENCH_KP(rscan);
+BENCH_KP(rstore);
+BENCH_KP(fflip);
+BENCH_KP(fnoflip);
 BENCH_KP(full);
 
 
