@@ -15,20 +15,21 @@
 #include "kp/short.hpp"
 #include "kpcases.hpp"
 
-#define BENCH_KP(version)                                                \
-    static void BM_##version(benchmark::State &state)                    \
-    {                                                                    \
-        auto &kp = kpcs[state.range(0) - 1];                             \
-        for (auto _ : state) {                                           \
-            auto ta = kp_##version::treeAncestorCreate(                  \
-                kp.n, kp.parents.data(), kp.parents.size());             \
-            for (const auto &pair : kp.queries) {                        \
-                kp_##version::treeAncestorGetKthAncestor(ta, pair.first, \
-                                                         pair.second);   \
-            }                                                            \
-            kp_##version::treeAncestorFree(ta);                          \
-        }                                                                \
-    }                                                                    \
+#define BENCH_KP(version)                                           \
+    static void BM_##version(benchmark::State &state)               \
+    {                                                               \
+        auto &kp = kpcs[state.range(0) - 1];                        \
+        for (auto _ : state) {                                      \
+            auto ta = kp_##version::treeAncestorCreate(             \
+                kp.n, kp.parents.data(), kp.parents.size());        \
+            for (const auto &pair : kp.queries) {                   \
+                int ans = kp_##version::treeAncestorGetKthAncestor( \
+                    ta, pair.first, pair.second);                   \
+                asm volatile("" : : "g"(ans) : "memory");           \
+            }                                                       \
+            kp_##version::treeAncestorFree(ta);                     \
+        }                                                           \
+    }                                                               \
     BENCHMARK(BM_##version)->DenseRange(1, 10)
 
 BENCH_KP(base);
