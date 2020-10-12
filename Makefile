@@ -1,5 +1,6 @@
 CC = gcc
 CFLAGS = -O2 -g -Wall -Werror -fsanitize=address
+CXXFLAGS = -O2 -g -Wall -Werror -fsanitize=address -fno-omit-frame-pointer
 
 KP_SRC = $(wildcard kp/*.hpp)
 
